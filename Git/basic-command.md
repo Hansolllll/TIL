@@ -36,3 +36,17 @@ git config --global user.name '이름'
     - `git commit -m "메세지"`
     - `staging area`에 올라간 파일들의 스냅샷을 찍어서 `.git directory`에 저장
     - 일반적으로 `-m` 옵션을 넣어서 메세지를 추가해 등록
+
+
+## 원격저장소에 업로드하기
+
+- `remote add`
+    - `git remote add origin <URL>`
+    - 원격저장소 주소를 origin 이라는 이름으로 저장
+
+- `push`
+    - `git push <원격저장소이름> <브랜치이름>`
+        - ex. `git push origin master`    
+        - 일반적으로 원격저장소이름/브랜치 이름은 origin/main 사용
+    - 원격저장소에 브랜치를 업로드
+        
