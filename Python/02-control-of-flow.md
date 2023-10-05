@@ -15,7 +15,7 @@
 ### 02. `else`:
     if의 조건식이 거짓인 경우 실행하는 코드
 
-## `elif`
+### 03. `elif`
 - else + if를 의미하며 깔끔한 코드 작성 가능
 ![elif](../assets/elif.jpg) 
 
@@ -33,3 +33,83 @@ else:
 
     위의 조건식에 하나도 부합하지 않는 경우 실행
 
+### `조건표현식`
+- ***True value if <조건식> else false value***
+- 기존의 if와 동일한 의미
+- `if`와 `else` 사이의 조건식 만족시 `True value` 수행, 불만족시 `False value` 수행
+
+## 반복문
+### while문 
+```python
+while <조건식>:
+    실행할 코드
+```
+- 조건 만족시 아래 코드 실행, 불만족시 밖으로 빠져나옴
+- 빠져나올 조건을 넣지 않으면 무한루프 생성됨
+
+### for
+
+```python
+for variable in sequence:
+    실행할 코드
+```
+- 정해진 범위 내의 반복
+- `일의 양`을 정해주는 개념 
+- sequence 자료형인 `List`/`Range`/`Tuple`/`String` 사용, 자료형 내부를 한바퀴 돌고 정지
+- 자료형의 범위를 초과해서 동작할 수 없음
+    - IndexError: list assignment index out of range 발생
+- 자료가 계속 추가되는 경우 `len()` 함수 사용해 코드 작성 
+    - for i in range(len(menus)):
+- ***enumerate*** 
+    - 리스트의 원소에 순서값을 부여
+    - 데이터와 인덱스 값을 포함하는 `enumerate` 객체 반환(`tuple` 형태)    
+        - for item in enumerate(menus):
+        - (0, '라면')
+
+#### dictionary 반복
+- 원칙적으론 시퀀스 자료형(`List`/`Tuple`/`Range`/`String`)만 반복구문 가능하지만 `Dictionary`도 다음과 같은 상황에 반복 가능
+
+1. for key in dict:
+        
+        ex. for key in blood_type:
+                print(blood_type[key])
+- `print(info[key])`를 통해 `value`를 함께 출력 가능
+
+2. for key in dict.keys():
+
+        ex. for key in blood_type.keys():
+                print(key)
+- `dict.keys()`를 통해 `dictionary`의 `key`만 가져올 수 있음
+
+3. for value in dict.values():
+
+        ex. for value in blood_type.values():
+                print(value)        
+- `dictionary`의 `value`만 가져옴
+
+4. for key, value in dict.items():
+        
+        ex. for key, value in blood_type.items():
+                
+- `dictionary`의 `key-value` 쌍을 가져옴
+
+#### break
+- 특정 조건 만족시 반복문 종료함
+
+#### continue
+- 특정 조건 불만족시 반복문을 종료하는 것이 아닌 다음 반복을 실행함
+
+#### else
+- 끝까지 반복이 진행됐지만 `break`를 만나지 않은 경우
+
+### match
+```
+match value:
+    case 조건:
+        실행할코드
+    case 조건:
+        실행할코드
+    case _:
+        실행할코드
+```
+- if문처럼 특정 값이나 조건에 따라 결과 출력
