@@ -18,6 +18,9 @@ func_name(parameter1, parameter2)
 - `return`이 없다면 -> None 반환
     - `print`와의 차이 : print는 값을 콘솔에 출력해 보여주는 함수로서 값 반환하지 않음
     - print(func(1)) 일 때, func(1)의 값을 콘솔에 출력함과 동시에 func(1)의 값이 사라지며 print(None)으로 바뀜 -> None 출력
+    
+![return_function](../assets/return_function.jpeg)
+
 - 하나의 객체만 반환
     - return 1, 2 -> tuple인 (1, 2) 출력 
     - jupyter notebook은 return이 구현된 함수 여러 개 실행시 마지막 함수의 값을 return함
