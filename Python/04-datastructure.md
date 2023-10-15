@@ -1,5 +1,19 @@
-# 문자열 메소드
+# 데이터 스트럭쳐
+# INDEX
+1. 메소드
+    1. 문자열 메소드
+    2. 리스트 메소드
+    3. 딕셔너리 메소드
+    4. 세트 메소드
+2. 기타 함수
+    1. map
+    2. fliter
+    3. zip
+
+# 1. 메소드(method)
 - 메소드 : 객체 안에 들어있는 함수
+
+## 1-1. 문자열 메소드(string method)
 - 문자열은 `immutable`하므로 수정 불가
 - 원문 수정하고 싶다면 재할당 
 
@@ -70,7 +84,7 @@ a.count(h)
 -> 2
 ```
 
-# 리스트 메소드
+## 1-2. 리스트 메소드
 - `.append(x)`
     - list에 x 추가
 - `.extend(iterable)`
@@ -114,13 +128,13 @@ numbers.reverse()
 -> [4, 2, 3, 1]
 ```
 
-## list copy
+### list copy
 - origin list = [1, 2, 3]
 - copy_list = origin_list
 - 이때, copy 리스트의 데이터를 수정하면 origin_list도 함께 수정됨(데이터가 저장된 같은 주소를 사용하므로)
 - `deepcopy` 사용 권장
 
-## list comprehension
+### list comprehension
 ```python
 result = []
 
@@ -139,7 +153,7 @@ result2 = [ number ** 3 for number in numbers ]
 result = [char for char in words if char not in vowels if char.isupper()]
 ```
 
-# 딕셔너리 메소드
+## 1-3. 딕셔너리 메소드
 - `.pop(key[, default])`
     - 해당하는 key의 value pop
     - 원본 수정
@@ -150,7 +164,7 @@ result = [char for char in words if char not in vowels if char.isupper()]
     - 원본수정 X
     - 해당하는 값 없으면 none 반환
 
-## dict comprehension
+### dict comprehension
 
 
 ```python
@@ -169,7 +183,7 @@ result2 = {k : v for k, v in dust.items() if v >= 50}
 ```
 - 위와 아래가 의미하는 것은 동일함
 
-# 세트 메소드
+## 1-4. 세트 메소드
 - `.add()`
     - 데이터 추가후 정렬되지 않은 데이터가 나옴(인덱스 접근 불가)
     - 하나의 데이터 중복 불가
@@ -194,9 +208,8 @@ fruits.update({'grape', 'orange'})
 fruits.pop()
 -> {'p', 'banana', 'watermelon', 'apple', 'orange', 'melon', 'g', 'a', 'r', 'grape'}
 ```
-
-# map, filter, zip
-## map(function, itrerable)
+# 2. 기타 함수
+## 2-1. map(function, itrerable)
 - `function`을 `iterable`에 적용
 ```python
 def cube(x):
@@ -208,7 +221,7 @@ print(list(result2))
 -> [1, 8, 27]
 ```
 
-## filter(function, iterable)
+## 2-2. filter(function, iterable)
 - filter에 들어가는 function은 T/F를 반환해야함
 ```python
 result2 = filter(is_odd, numbers)
@@ -216,7 +229,7 @@ print(list(result2))
 ```
 - 이 때 is_odd(함수)의 결과가 `True`인 것만 반환
 
-## zip
+## 2-3. zip
 - 쌍으로 묶어줌
 - 대치되는 갯수만큼만 결과 생성
 ```python

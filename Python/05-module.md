@@ -1,7 +1,17 @@
-# 모듈
+# module
+# INDEX
+1. 모듈
+
+2. 패키지
+    1. 파이썬 내장 패키지
+        1. math
+        2. random
+        3. datetime
+
+# 1. 모듈
 - `import` 이용해 외부 파일/함수 불러옴 
 
-# 패키지
+# 2. 패키지
 ```python
 myPackage/
     __init__.py
@@ -16,14 +26,14 @@ myPackage/
 - 기존에 존재하는 변수나 함수와 불러오는 함수의 이름이 충돌하는 경우 `as`를 이용해 이름을 바꿔서 불러올 수 있음
     - from myPackage.math import fomula as f
 
-## 파이썬 내장 패키지
-### math 
+## 2-1. 파이썬 내장 패키지
+### 2-1-1. math 
 - `.ceil()` : 올림처리
 - `.floor()` : 내림처리
 - `.sqrt()` : 루트
 - `.factorial` : 팩토리얼
 
-### random
+### 2-1-2. random
 - `.random()`: 난수 반환 & 실행시마다 다른 값
 - `.randint()`: () 범위 내의 임의의 정수 반환
 - `.seed()`: ()안의 수를 기반으로 랜덤하게 계산된 숫자 반환 & 반복해도 같은 값
@@ -31,7 +41,7 @@ myPackage/
 - `.choice()`: 무작위 복원추출
 - `.sample(population, k)`: 범위 안에서 k개 데이터 추출
 
-### datetime
+### 2-1-3. datetime
 - `.now()`: 현재 시각 반환 & 객체 자체가 출력 기능
 - `.today()`: 현재 날짜 및 시간 변환 & print 통과시 데이터 형태가 보기 쉽게 바뀜
 - `.utcnow`: utc(coordinated universal time) 기준 현재 시각 반환

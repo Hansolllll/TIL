@@ -1,11 +1,15 @@
 # Error
+# INDEX
+1. syntax error
+2. exception
+3. 예외처리
 
-## syntax error
+## 1. syntax error
 - 파이썬 내부 문법에 어긋날 때 발생
     - `:`, `()`, `''` 등
 ![syntax_error](../assets/syntax_error.jpg)
 
-## exception
+## 2. exception
 - `ZeroDivisionError`: 0으로 나눌 때 발생
 - `NameError`: 정의되지 않은 함수나 변수 사용시 발생
 - `TypeError`: 서로 다른 형태의 데이터 연산시, 함수 내 필수 요소 미정의 시 발생
@@ -15,7 +19,7 @@
 - `ModuleNotFoundError`: 사용하려는 모듈이 없을 때 발생
 - `KeyboardInterrupt`: 무한루프 강제 중지시 발생
 
-## 예외처리
+## 3. 예외처리
 ```python
 try:
     code
