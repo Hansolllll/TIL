@@ -1,10 +1,13 @@
 # TIL
 
-> Today I Learned
-> 오늘 배운 내용을 복습하고 정리해봅니다. 
+> 내용 복습 및 정리 
 
 ---
 
 - Git
 - Linux
 - Markdown
+- Pandas
+- Python-basic
+- Python
+- assets
