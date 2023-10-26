@@ -88,3 +88,5 @@ series_name = pd.Series(['data_a', 'data_b', 'data_c'], index=['a', 'b', 'c'])
 ```python
 series_name.values
 ```
+
+
