@@ -112,6 +112,6 @@ df2['컬럼명1'] = pd.qcut(df['컬럼명2'], q=분할할 구간 수)
 qbins = [10, 20, 30, 40]
 pd.qcut(df['컬럼명'], qbins)
 
-qlabes = [A, B, C]
+qlabes = ['A', 'B', 'C']
 pd.qcut(df['컬럼명'], qbins, labels=qlabel)
 ```
