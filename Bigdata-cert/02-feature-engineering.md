@@ -80,7 +80,7 @@ c_test = pd.get_dummies(c_test[cols])
 
 # 3. 데이터 합치기
 - 분리해서 스케일링, 인코딩을 거친 데이터들을 다시 합침
-- `axis=0`일때 행방향으로 결합되므로 `axis=1` 꼭 기입하기
+- `axis=0`일때 위아래방향으로 결합되므로 `axis=1` 꼭 기입하기
 ```python
 X_train = pd.concat([n_train, c_train], axis=1)
 X_test = pd.concat([n_test, c_test], axis=1)
