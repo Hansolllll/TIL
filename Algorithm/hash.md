@@ -1,8 +1,17 @@
-# 개념
-- dictionary 처럼 `key:검색어`와 `value:검색결과`를 갖는 하나의 ***자료구조***
+# 1. 개념
+## 암호화? 딕셔너리? 
+- 입력값을 `key`로, 해시 처리된 출력값을 `value`로 갖는 `dictionary`와 유사한 ***자료구조*** => `hash table`
+![hash개념](./../assets/hashtable.jpeg)
+- 데이터의 오류나 변조 탐지(보안)를 빠르고 편하게 하기 위한 목적
+- `hashing`: 해시 함수에서 `key`값을 `hash`로 변환하는 과정
+- `hash function`: `key`를 고정된 길이의 `hash`로 변환
+
+
+
+
+
 - `string` 기반으로 정보 기록 및 관리 시 사용
 - `hash`/`hash function`/`hashing`/`hash table`의 개념으로 나뉨
-- `hash function`: `key`를 고정된 길이의 `hash`로 변환
 - `hashing`: 해시 함수에서 `key`값을 `hash`로 변환하는 과정
 - `hash table`: 연관 배열구조를 이용하여 데이터를 `key`와 `value`로 저장하는 자료구조 => ???hash와 hash table 개념차이???
 
