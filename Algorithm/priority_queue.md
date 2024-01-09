@@ -1,4 +1,3 @@
-
 # priority queue(우선순위 큐)
 - 우선순위가 높은 데이터 순으로 삭제하는 자료구조
 - 가치데이터와 함께 넣음 
@@ -7,7 +6,7 @@
 - 배열, 연결리스트, 힙으로 구현 가능하며, 힙 사용이 가장 효율적
 
 ## `heap`
-- 참고1:  https://gmlwjd9405.github.io/2018/05/10/data-structure-heap.html 
+- 참고1:  https://gmlwjd9405.github.io/2018/05/10/data-structure-heap.html
 - 참고2: https://gmlwjd9405.github.io/2018/05/10/algorithm-heap-sort.html
 - 우선순위 큐를 위해 만들어진 자료구조로 최댓값, 최솟값을 쉽게 추출 가능
 - 힙정렬(`heap sort`): 힙트리를 이용해 자료를 정렬
@@ -35,6 +34,6 @@ def heapsort(iterable):
         result.append(heapq.heappop(h))
     return result
 
-    # max heap 형태로 동작하게 하고 싶다면 h가 아닌 -h를 사용할 것
+    # max heap 형태로 동작하게 하고 싶다면 -value와 -h를 사용할 것
 ```
 

@@ -67,7 +67,7 @@ queue.append()
 queue.popleft()
 => queue에서 원소 빼기
 
-print(squeue)
+print(queue)
 => 집어넣은 순서대로 출력
 
 queue.reverse()
