@@ -46,16 +46,3 @@ delete from 테이블명 where 조건;
 -- delete가 아닌 update 사용
 update 테이블명 set 컬럼명 = null where 조건
 ```
-
--- delete도 조건절을 붙여주지 않으면 모든 데이터를 지움
--- 행단위로 데이터를 지우고 특정 컬럼만 선택해서 지울 순 없음 
-delete from book_list where book_no = '9791168470000';
-
--- 특정 컬럼을 비우고 싶다면 update로 null값 넣기 
-update book_list set writer = null where book_name = '세이노의 가르침';
-
-commit;
-
-delete from book_list;
-
-rollback;
