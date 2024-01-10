@@ -8,6 +8,7 @@ INDEX
 # 0. DDL(Data Definition Language)
 - 데이터 정의어
 - 데이터 구조와 관련되며 `CREATE`, `ALTER`, `DROP`, `TRUNCATE`가 있음
+- 구조 변경후 자동으로 저장하는 `auto commit` 가능 
 
 # 1. CREATE
 - 데이터베이스에 ***테이블 생성***
