@@ -52,3 +52,18 @@ select * from 테이블1 별칭1 right outer join 테이블2 별칭2 on 별칭1.
 select * from 테이블1 별칭1 right outer join 테이블2 별칭2 on 별칭1.컬럼명1 = 별칭2.컬럼명1;
 ```
 
+# 2. `CASE WHEN`
+- select절에 사용되며 `if then else`와 유사
+- 단순케이스 문법식과 검색케이스 문법식이 있음 
+    - 단순케이스 문법식 : equal 조건식만 가능 
+    - 검색케이스 문법식 : 범위조건 가능 
+- 마지막 else 생략시 그 외의 값들은 null로 반환 
+- 사용 예시 
+```sql 
+-- 단순케이스 문법식 
+select 컬럼1, case 컬럼2 when 값1 then 값2 when 값3 then 값4 else 값5 end as 별칭 from 테이블명;
+
+-- 검색케이스 문법식 
+-- 범위 조건 적용 가능(다중범위도 가능: 앞에 있는 범위가 우선순위 가짐) 
+select 컬럼1, case when 컬럼2 = 값1 then 값2 when 컬럼2 = 값2 then 값3 else 값4 end as 별칭 from 테이블1;
+```
