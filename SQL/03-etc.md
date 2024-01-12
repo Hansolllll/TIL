@@ -1,8 +1,18 @@
 INDEX
 1. SELECT/ALIAS
+    1. SELECT 
+    2. ALIAS
 2. WHERE
+    1. LIMIN
+    2. IN
+    3. LIKE
+    4. BETWEEN
 3. ORDER BY
 4. AGGREGATION FUNCTION
+    1. COUNT
+    2. SUM
+    3. AVG
+    4. MIN/MAX
 5. GROUP BY
 6. HAVING
 ---
