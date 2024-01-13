@@ -67,3 +67,64 @@ select 컬럼1, case 컬럼2 when 값1 then 값2 when 값3 then 값4 else 값5 e
 -- 범위 조건 적용 가능(다중범위도 가능: 앞에 있는 범위가 우선순위 가짐) 
 select 컬럼1, case when 컬럼2 = 값1 then 값2 when 컬럼2 = 값2 then 값3 else 값4 end as 별칭 from 테이블1;
 ```
+
+# 3. `SUBQUERY`
+- 메인쿼리 안에 있는 또 하나의 쿼리를 의미하며 여러개 사용 가능 
+- `SELECT`, `FROM`, `WHERE`, `HAVING`, `ORDER BY`, `VALUES(INSERT)`, `SET(UPDATE)`에 사용 가능 
+- 반환하는 데이터에 따라 단일행, 다중행, 다중컬럼 서브쿼리로 나뉨
+- 메인쿼리와의 연관성에 따라 연관 서브쿼리, 비연관 서브쿼리로 나뉨
+
+## 3-1. `SCALAR SUBQUERY`
+- `select` 절에 사용되는 서브쿼리 
+- 하나의 값이 출력되도록 작성해야함 
+```sql
+-- 연관 스칼라 서브쿼리
+select 별칭1.컬럼1, 별칭1.컬럼2,
+        (select 별칭2.컬럼2 from 테이블2 별칭2 where 별칭2.컬럼3 = 별칭1.컬럼3) as 별칭
+from 테이블1 별칭1
+
+-- 비연관 스칼라 서브쿼리
+select 별칭1.컬럼1, 별칭1.컬럼2,
+        (select 별칭2.컬럼2 from 테이블2 별칭2 where 별칭2.컬럼2 = 1) as 별칭
+from 테이블1 별칭1
+```
+
+## 3-2. `INLINE VIEW`
+- `from` 절에 사용되는 서브쿼리
+- 테이블로 존재하지 않는 가상의 데이터를 조인할 때 유용(조인 조건에 사용된 컬럼 꼭 인라인뷰에 기재)
+- INLINE VIEW: 테이블 대용, SCALAR SUBQUERY: 컬럼 대용
+- 사용 예시
+```sql
+-- 인라인뷰 사용시
+select 별칭1.컬럼1, 별칭1.컬럼2, 별칭2.컬럼3
+from 테이블1 별칭1, 
+    (select 컬럼1, 컬럼3
+    from 테이블2
+    where 별칭1.컬럼1 = 별칭2.컬럼1) 별칭2;
+
+-- 일반조건 사용시
+select 별칭1.컬럼1, 별칭1.컬럼2, 별칭2.컬럼3
+from 테이블1 별칭1, 테이블2 별칭2
+where 별칭1.컬럼1 = 별칭2.컬럼1;
+
+-- 가상의 데이터를 인라인뷰로 조인 
+select tmp.hello, t1.name
+from (select '안녕!' as hello from dual) tmp, table1 t1;
+```
+
+## 3-3. `NESTED SUBQUERY`
+- `where`, `having`과 같은 조건절에 사용 
+- 메인 쿼리와 비교시 사용 
+- 리턴되는 값의 수에 따라 단일 서브쿼리와 다중 서브쿼리로 나뉨
+    - 단일 서브쿼리: 서브쿼리에서 리턴되는 값이 하나일 때, equal 조건 사용 가능
+    - 다중 서브쿼리: 서브쿼리에서 리턴되는 값이 두개 이상일 때, in 사용 가능
+- 사용 예시 
+```sql
+-- 단일 서브쿼리
+select * from 테이블1 별칭1
+where 별칭1.컬럼1 = (select 별칭2.컬럼1 from 테이블2 별칭2 where 조건);
+
+-- 다중 서브쿼리
+select * from 테이블1 별칭1
+where 별칭1.컬럼1 in (select 별칭2.컬럼1 from 테이블2 별칭2 where 조건);
+```
