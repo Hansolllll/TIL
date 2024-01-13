@@ -128,3 +128,38 @@ where 별칭1.컬럼1 = (select 별칭2.컬럼1 from 테이블2 별칭2 where �
 select * from 테이블1 별칭1
 where 별칭1.컬럼1 in (select 별칭2.컬럼1 from 테이블2 별칭2 where 조건);
 ```
+
+# 4. `UNION` & `UNION ALL`
+- 서로 다른 두 쿼리의 결과 세트를 연결 
+- join: 데이터 연산 방향이 가로 / 집합연산자: 데이터 연산 방향이 세로
+- 오라클의 교집합(intersect), 차집합(minus)을 지원하지 않음 
+- `UNION`, `UNION ALL` 사용시 `select`절에 있는 컬럼의 수가 일치해야함(순서는 달라도 됨)
+- 두 쿼리의 별칭이 다를 때 먼저 쓰인 테이블의 별칭이 결과로 나옴
+
+## 4-1. `UNION`
+- 중복 데이터 제거 
+- 중복을 제거하기 때문에(추가적인 일을 하므로) 데이터의 크기가 크면 속도저하가 발생할 수 있음 
+
+## 4-2. `UNION ALL`
+- 데이터의 중복 허용
+
+```sql
+-- union 
+select * from 테이블1
+union 
+select * from 테이블2
+order by 컬럼1;
+
+-- union all
+select * from 테이블1
+union all 
+select * from 테이블2
+
+-- intersect(교집합 구현)
+select * from 테이블1 별칭1
+where exists (select 1 from 테이블2 별칭2 where 별칭1.컬럼1 = 별칭2.컬럼1);
+
+-- minus(차집합 구현)
+select * from 테이블1 별칭1
+where not exists (select 1 from 테이블2 별칭2 where 별칭1.컬럼1 = 별칭2.컬럼1);
+```
