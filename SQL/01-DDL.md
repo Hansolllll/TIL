@@ -30,6 +30,10 @@ INDEX
     - not null 
         - null 허용이 default
         - 데이터 타입 뒤에 `not null` 붙여서 지정 
+- `auto_increment`
+    - 열을 정의할 때 1부터 증가하도록 자동입력 되는 옵션 
+    - 입력시 null을 넣어도 증가된 숫자가 입력됨
+    - `auto_increment`로 지정하는 열은 `PRIMARY KEY` 지정 필수
 
 - 작성 예시        
 ```sql
@@ -53,6 +57,12 @@ insert into 테이블명 (컬럼명1, 컬럼명2) values (값1, 값2);
 
 -- 테이블 전체 조회
 select * from 테이블명;
+
+-- auto_increment 사용
+create table 테이블명(
+    컬럼1 int auto_increment primary key,
+    컬럼2 char(4)
+);
 ```
 
 # 2. ALTER
@@ -63,6 +73,9 @@ select * from 테이블명;
     - `ADD` : 컬럼 추가
     - `DROP` : 컬럼 삭제
     - `RENAME` : 테이블명 변경
+- `auto_increment` 기본 설정 값 수정
+    - 처음 시작하는 값 수정 가능
+    - 증가치 설정 가능 
 - 작성 예시
 ```sql
 -- 컬럼 추가 
@@ -79,6 +92,10 @@ alter table 테이블명 drop column 컬럼명;
 
 -- 테이블명 변경
 alter table 기존테이블명 rename 바꿀테이블명;
+
+-- auto_increment 시작값 수정, 증가치 수정
+alter table 테이블명 auto_increment=시작값;
+set @@auto_increment_increment=증가치;
 ```
 # 3. DROP_TRUNCATE
 - 테이블 삭제
