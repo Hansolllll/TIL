@@ -85,7 +85,7 @@ alter table 테이블명 add column 컬럼명 데이터타입 및 크기;
 alter table 테이블명 modify column 컬럼명 바꿀데이터타입 및 크기;
 
 -- 컬럼명 변경
-alter table 테이블명 chage column 기존컬럼명 바꿀컬럼명 데이터타입 및 크기;
+alter table 테이블명 change column 기존컬럼명 바꿀컬럼명 데이터타입 및 크기;
 
 -- 컬럼 삭제
 alter table 테이블명 drop column 컬럼명;
