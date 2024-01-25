@@ -18,39 +18,6 @@
     => 집어넣은 순서대로 출력
     ```
 
-    - C++
-    ```c++
-    stack.push() 
-    => stack에 원소 추가
-
-    stack.pop()
-    => stack에서 원소 빼기
-
-    cout << s.top << ' ';
-    => 가장 마지막에 집어넣은 원소 출력
-
-    s.pop();
-    => 가장 마지막 원소 꺼내기
-    ```
-    *cout* => `<<(변수)<< or <<'문자열'<<`의 형태로 작성해 출력하는데 이용
-
-
-    - Java 
-    ```java
-    stack.push() 
-    => stack에 원소 추가
-
-    stack.pop()
-    => stack에서 원소 빼기
-
-    while (!s.empty()){
-        System.out.print(s.peek()+' ');
-    => peek으로 최상단 원소 확인
-        s.pop();
-    => pop으로 꺼내기
-    }
-    ```
-
 # queue(큐)
 - 선입선출의 자료구조
 - 입구와 출구가 모두 뚫린 터널같은 형태
@@ -75,37 +42,4 @@ queue.reverse()
 
 print(queue)
 => 집어넣은 역순으로 출력
-```
-
-- C++
-```c++
-using namespace std;
-=> std 라이브러리 사용
-q.push() 
-=> queue에 원소 추가
-
-q.pop()
-=> queue에서 원소 빼기
-
-cout << q.front << ' ';
-=> 앞에서부터 원소 출력
-
-q.pop();
-=> 원소 꺼내기
-```
-*cout* => `<<(변수)<< or <<'문자열'<<`의 형태로 작성해 출력하는데 이용
-
-
-- Java 
-```java
-q.offer() 
-=> queue에 원소 추가
-
-q.poll()
-=> queue에서 원소 빼기
-
-while (!s.empty()){
-System.out.print(q.poll()+' ');
-=> 가장 먼저 들어온 원소부터 추출
-}
 ```
