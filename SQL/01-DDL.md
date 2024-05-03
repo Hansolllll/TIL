@@ -1,4 +1,4 @@
-INDEX
+# INDEX
 0. DDL
 1. CREATE
 2. ALTER
@@ -7,8 +7,8 @@ INDEX
 ---
 # 0. DDL(Data Definition Language)
 - 데이터 정의어
-- 데이터 구조와 관련되며 `CREATE`, `ALTER`, `DROP`, `TRUNCATE`가 있음
-- 구조 변경후 자동으로 저장하는 `auto commit` 가능 
+- ***데이터 구조***와 관련되며 `CREATE`, `ALTER`, `DROP`, `TRUNCATE`가 있음
+- 구조 변경 후 자동으로 저장하는 `auto commit` 가능 
 
 # 1. CREATE
 - 데이터베이스에 ***테이블 생성***
@@ -18,8 +18,8 @@ INDEX
         - 테이블명엔 `_`, `$` 외의 특수문자 사용 불가
 
     - 데이터타입
-        - `CHAR` : 고정된 길이의 문자열 데이터
-        - `VARCHAR` : 가변 길이의 문자열 데이터
+        - `CHAR` : ***고정된 길이***의 문자열 데이터
+        - `VARCHAR` : ***가변 길이***의 문자열 데이터
         - `INT` : 수치형 데이터
         - `DATE` : 날짜 데이터
 
@@ -45,10 +45,10 @@ create table 테이블명(
     컬럼4 int not null);
 
 -- 데이터 넣기(컬럼과 넣을 데이터 순서가 일치하는 적합한 데이터여야함)
-insert into 테이블 values(값1, 값2, 값3, 값4);
+insert into 테이블명 values(값1, 값2, 값3, 값4);
 
 -- 여러개의 데이터 한번에 넣기 
-insert into 테이블 values
+insert into 테이블명 values
 (값1, 값2, 값3, 값4),
 (값5, 값6, 값7, 값8);
 
@@ -68,8 +68,8 @@ create table 테이블명(
 # 2. ALTER
 - 테이블의 구조 변경
 - 가능한 작업
-    - `CHANGE` : 컬럼명 변경 
-    - `MODIFY` : 데이터 타입 및 사이즈 변경
+    - `CHANGE` : *컬럼명* 변경 
+    - `MODIFY` : *데이터 타입 및 사이즈* 변경
     - `ADD` : 컬럼 추가
     - `DROP` : 컬럼 삭제
     - `RENAME` : 테이블명 변경
